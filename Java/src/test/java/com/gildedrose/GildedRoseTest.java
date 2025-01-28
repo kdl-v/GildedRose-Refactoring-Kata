@@ -3,7 +3,7 @@ package com.gildedrose;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static com.gildedrose.ItemEnums.*;
+import static com.gildedrose.GildedRose.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GildedRoseTest {
@@ -53,7 +53,7 @@ class GildedRoseTest {
 
     @Test
     void testBrieQuality() {
-        Item[] items = new Item[] { new Item(BRIE.getItem(), 5, 10)};
+        Item[] items = new Item[] { new Item(AGED_BRIE, 5, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(11, app.items[0].quality);
@@ -61,7 +61,7 @@ class GildedRoseTest {
 
     @Test
     void testBackstageQualityLimitFifty() {
-        Item[] items = new Item[] { new Item(BACKSTAGE_PASSES.getItem(), 5, 48)};
+        Item[] items = new Item[] { new Item(BACKSTAGE_PASSES, 5, 48)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(50, app.items[0].quality);
@@ -69,7 +69,7 @@ class GildedRoseTest {
 
     @Test
     void testBackstageQualityAfterConcert() {
-        Item[] items = new Item[] { new Item(BACKSTAGE_PASSES.getItem(), 0, 48)};
+        Item[] items = new Item[] { new Item(BACKSTAGE_PASSES, 0, 48)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(0, app.items[0].quality);
@@ -77,7 +77,7 @@ class GildedRoseTest {
 
     @Test
     void testBackstageQualityInFive() {
-        Item[] items = new Item[] { new Item(BACKSTAGE_PASSES.getItem(), 5, 10)};
+        Item[] items = new Item[] { new Item(BACKSTAGE_PASSES, 5, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(13, app.items[0].quality);
@@ -85,7 +85,7 @@ class GildedRoseTest {
 
     @Test
     void testBackstageQualityInTen() {
-        Item[] items = new Item[] { new Item(BACKSTAGE_PASSES.getItem(), 10, 10)};
+        Item[] items = new Item[] { new Item(BACKSTAGE_PASSES, 10, 10)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(12, app.items[0].quality);
@@ -93,7 +93,7 @@ class GildedRoseTest {
 
     @Test
     void testSulfurasItem() {
-        Item[] items = new Item[] { new Item(SULFURAS.getItem(), -1, 80)};
+        Item[] items = new Item[] { new Item(SULFURAS, -1, 80)};
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(80, app.items[0].quality);
