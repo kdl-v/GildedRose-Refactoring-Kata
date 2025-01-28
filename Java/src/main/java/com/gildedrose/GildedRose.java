@@ -1,7 +1,5 @@
 package com.gildedrose;
 
-import static com.gildedrose.ItemEnums.*;
-
 class GildedRose {
     Item[] items;
 
